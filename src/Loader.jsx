@@ -2,8 +2,11 @@ import React from "react";
 
 import "./loader.css";
 
-const Loader = () => {
-  const spinnerSize = 100;
+const Loader = props => {
+  const { spinnerSize, isVisible } = props;
+  if (!isVisible) {
+    return null;
+  }
   return (
     <div className="spinner">
       <svg
